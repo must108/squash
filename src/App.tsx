@@ -26,37 +26,39 @@ function App() {
   };
 
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>URL Shortener</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <form onSubmit={handleSubmit}>
-          <Input
-            type="url"
-            value={longUrl}
-            onChange={(e) => setLongUrl(e.target.value)}
-            placeholder="Enter long URL"
-            required
-          />
-          <Button type="submit" className="mt-2 w-full">Shorten</Button>
-        </form>
-      </CardContent>
-      <CardFooter>
-        {shortUrl && (
-          <Alert>
-            <AlertDescription>
-              Short URL: <a href={shortUrl} target="_blank" rel="noopener noreferrer">{shortUrl}</a>
-            </AlertDescription>
-          </Alert>
-        )}
-        {error && (
-          <Alert variant="destructive">
-            <AlertDescription>{error}</AlertDescription>
-          </Alert>
-        )}
-      </CardFooter>
-    </Card>
+    <div className="flex items-center justify-center min-h-screen">
+      <Card className="w-[350px]">
+        <CardHeader>
+          <CardTitle>URL Shortener</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit}>
+            <Input
+              type="url"
+              value={longUrl}
+              onChange={(e) => setLongUrl(e.target.value)}
+              placeholder="Enter long URL"
+              required
+            />
+            <Button type="submit" className="mt-2 w-full">Shorten</Button>
+          </form>
+        </CardContent>
+        <CardFooter>
+          {shortUrl && (
+            <Alert>
+              <AlertDescription>
+                Short URL: <a href={shortUrl} target="_blank" rel="noopener noreferrer">{shortUrl}</a>
+              </AlertDescription>
+            </Alert>
+          )}
+          {error && (
+            <Alert variant="destructive">
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+        </CardFooter>
+      </Card>
+    </div>
   );
 };
 
