@@ -13,7 +13,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const res = await fetch(import.meta.env.NEXT_PUBLIC_SQUASH_POST!, {
+      const res = await fetch(import.meta.env.VITE_SQUASH_POST!, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ longUrl })
